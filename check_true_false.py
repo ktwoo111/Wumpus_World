@@ -20,6 +20,43 @@
 import sys
 from logical_expression import *
 
+
+def TT_Entails(KB, alpha):
+    KBsymbols = ExtractSymbol(KB)
+    Alphasymbols = ExtractSymbol(alpha)
+    symbols = KBsymbols + Alphasymbols
+    symbols = sorted(set(symbols),key=symbols.index)
+    print symbols #TODO: testing
+    model = {}
+    return TT_Check_All(KB,alpha,symbols,{})
+
+
+
+
+
+#model will be a dictionary
+def TT_Check_All(KB, alpha, symbols, model):
+
+    if Empty?(symbols):
+        if PL-True?(KB,model):
+            return PL-True?(alpha,model)
+        else return true
+    else:
+        P = symbols[0]
+        rest = symbols[1:] #everything except the first index one
+
+        trueModel = model
+        trueModel[P] = True
+
+        falseModel = model
+        falseModel[P] = False
+
+        return TT_Check_All(KB,alpha,rest, trueModel) and TT_Check_All(KB,alpha,rest,falseModel)
+    return
+
+def PL-True:
+    
+
 def main(argv):
     if len(argv) != 4:
         print('Usage: %s [wumpus-rules-file] [additional-knowledge-file] [input_file]' % argv[0])
@@ -52,8 +89,12 @@ def main(argv):
         print('failed to open file %s' % argv[2])
         sys.exit(0)
 
+
+
     # I had left this line out of the original code. If things break, comment out.
     print_expression(knowledge_base, '\n')
+    print
+
 
     # Add expressions to knowledge base
     print 'Loading additional knowledge...'
@@ -79,6 +120,8 @@ def main(argv):
     except:
         print('failed to open file %s' % argv[3])
         sys.exit(0)
+
+    print
     print 'Loading statement...'
     statement = input_file.readline().rstrip('\r\n')
     input_file.close()
@@ -94,7 +137,7 @@ def main(argv):
     print
 
     # Run the statement through the inference engine
-    #check_true_false(knowledge_base, statement)
+    TT_Entails(knowledge_base, statement)
 
     sys.exit(1)
     
