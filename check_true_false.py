@@ -21,85 +21,6 @@ import sys
 from logical_expression import *
 
 
-def TT_Entails(KB, alpha):
-    KBsymbols = ExtractSymbol(KB)
-    Alphasymbols = ExtractSymbol(alpha)
-    symbols = KBsymbols + Alphasymbols
-    symbols = sorted(set(symbols),key=symbols.index)
-    print symbols #TODO: testing
-    model = {}
-    return TT_Check_All(KB,alpha,symbols,{})
-
-
-
-
-
-#model will be a dictionary
-def TT_Check_All(KB, alpha, symbols, model):
-
-    if len(symbols) == 0:
-        if PL_True(KB,model):
-            return PL_True(alpha,model)
-        else:
-            return True
-    else:
-        P = symbols[0]
-        rest = symbols[1:] #everything except the first index one
-
-        trueModel = model
-        trueModel[P] = True
-
-        falseModel = model
-        falseModel[P] = False
-
-        return TT_Check_All(KB,alpha,rest, trueModel) and TT_Check_All(KB,alpha,rest,falseModel)
-def PL_True(expression, model):
-    if expression.symbol[0] is not '':
-        return model[expression.symbol[0]]
-    elif expression.connective[0].lower() is "and":
-        for elem in expression.subexpressions:
-            if PL_True(elem,model) is False:
-                return False
-        return True
-    elif expression.connective[0].lower() is "or":
-        for elem in expression.subexpressions:
-            if PL_True(elem,model) is True:
-                return True
-        return False
-    elif expression.connective[0].lower() is "xor":
-        true_trigger = False
-        false_trigger = False
-        for elem in expression.subexpressions:
-            if PL_True(elem,model) is True:
-                true_trigger = True
-            else:
-                false_trigger = True
-        if true_trigger is True and false_trigger is True:
-            return True
-        else:
-            return False
-    elif expression.connective[0].lower() is "if":
-        one = expression.subexpressions[0]
-        two = expression.subexpressions[1]
-        if PL_True(one,model) is True and PL_True(two,model) is False:
-            return False
-        else:
-            return True
-    elif expression.connective[0].lower() is "iff":
-        one = expression.subexpressions[0]
-        two = expression.subexpressions[1]
-        if PL_True(one,model) == PL_True(two,model):
-            return True
-        else:
-            return False
-    elif expression.connective[0].lower() is "not":
-        one = expression.subexpressions[0]
-        if PL_True(one, model) is True:
-            return False
-        else:
-            return True
-
-
 
 def main(argv):
     if len(argv) != 4:
@@ -136,8 +57,9 @@ def main(argv):
 
 
     # I had left this line out of the original code. If things break, comment out.
-    print_expression(knowledge_base, '\n')
+    #print_expression(knowledge_base, '\n') #TODO: testing
     print
+
 
 
     # Add expressions to knowledge base
@@ -147,6 +69,10 @@ def main(argv):
         if line[0] == '#' or line == '\r\n' or line == '\n' or line == '\r':
             continue
         counter = [0]  # a mutable counter
+
+        
+
+
         subexpression = read_expression(line.rstrip('\r\n'), counter)
         knowledge_base.subexpressions.append(subexpression)
     input_file.close()
@@ -156,7 +82,7 @@ def main(argv):
         sys.exit('invalid knowledge base')
 
     # I had left this line out of the original code. If things break, comment out.
-    print_expression(knowledge_base, '\n')
+    print_expression(knowledge_base, '\n') #TODO: testing
 
     # Read statement whose entailment we want to determine
     try:
@@ -177,11 +103,11 @@ def main(argv):
 
     # Show us what the statement is
     print '\nChecking statement: ',
-    print_expression(statement, '')
+    print_expression(statement, '') #TODO: testing
     print
 
     # Run the statement through the inference engine
-    print TT_Entails(knowledge_base, statement)
+    check_true_false(knowledge_base, statement)
 
     sys.exit(1)
     
