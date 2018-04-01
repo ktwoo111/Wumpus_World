@@ -60,8 +60,7 @@ def main(argv):
     #print_expression(knowledge_base, '\n') #TODO: testing
     print
 
-
-
+    modelFromAddKnow = {}
     # Add expressions to knowledge base
     print 'Loading additional knowledge...'
     for line in input_file:
@@ -70,19 +69,33 @@ def main(argv):
             continue
         counter = [0]  # a mutable counter
 
-        
-
+        temp = line
+        splitted = temp.split(" ")
+        #for elem in splitted:
+        #    print elem
+        if len(splitted) == 2:
+            if "not" in temp:
+                splitted = temp.split(" ")
+                splitted[1] = splitted[1].rstrip('\r\n')
+                splitted[1] = splitted[1].rstrip('\r')
+                splitted[1] = splitted[1].rstrip(')')
+                modelFromAddKnow[splitted[1]] = False
+        if len(splitted) == 1:
+            splitted[0] = splitted[0].rstrip('\r\n')
+            splitted[0] = splitted[0].rstrip('\r')
+            splitted[0] = splitted[0].rstrip(')')
+            modelFromAddKnow[splitted[0]] = True
 
         subexpression = read_expression(line.rstrip('\r\n'), counter)
         knowledge_base.subexpressions.append(subexpression)
     input_file.close()
-
+    print modelFromAddKnow #TODO: testing
     # Verify it is a valid logical expression
     if not valid_expression(knowledge_base):
         sys.exit('invalid knowledge base')
 
     # I had left this line out of the original code. If things break, comment out.
-    print_expression(knowledge_base, '\n') #TODO: testing
+    #print_expression(knowledge_base, '\n') #TODO: testing
 
     # Read statement whose entailment we want to determine
     try:
@@ -107,7 +120,7 @@ def main(argv):
     print
 
     # Run the statement through the inference engine
-    check_true_false(knowledge_base, statement)
+    check_true_false(knowledge_base, statement, modelFromAddKnow)
 
     sys.exit(1)
     

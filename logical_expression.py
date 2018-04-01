@@ -175,15 +175,27 @@ def ExtractSymbol(expression):
             extractedSymbols = extractedSymbols + (ExtractSymbol(elem))
     return extractedSymbols
 
+def RemoveSymbol(symbols,modelFromAddKnow):
+    key = modelFromAddKnow.keys()
 
-def TT_Entails(KB, alpha):
+    #print 'keys ', key #TODO: testing
+    #print 'dict ', modelFromAddKnow #TODO: testing
+
+    symbols = [x for x in symbols if x not in key]
+
+    return symbols
+
+
+
+def TT_Entails(KB, alpha,modelFromAddKnow):
     KBsymbols = ExtractSymbol(KB)
     Alphasymbols = ExtractSymbol(alpha)
     symbols = KBsymbols + Alphasymbols
-    symbols = sorted(set(symbols),key=symbols.index)
+    symbols = sorted(set(symbols), key=symbols.index)
     #print symbols #TODO: testing
-    model = {}
-    return TT_Check_All(KB,alpha,symbols,{})
+    symbols = RemoveSymbol(symbols,modelFromAddKnow)
+    #print symbols #TODO: testing
+    return TT_Check_All(KB,alpha,symbols,modelFromAddKnow)
 
 
 #model will be a dictionary
@@ -198,10 +210,10 @@ def TT_Check_All(KB, alpha, symbols, model):
         P = symbols[0]
         rest = symbols[1:] #everything except the first index one
 
-        trueModel = model
+        trueModel = dict(model)
         trueModel[P] = True
 
-        falseModel = model
+        falseModel = dict(model)
         falseModel[P] = False
 
         return TT_Check_All(KB,alpha,rest, trueModel) and TT_Check_All(KB,alpha,rest,falseModel)
@@ -253,14 +265,15 @@ def PL_True(expression, model):
         else:
             return True
 
-def check_true_false(KB, alpha):
+def check_true_false(KB, alpha,modelFromAddKnow):
     f = open('result.txt','w')
     invAlpha = logical_expression()
     invAlpha.connective = ['not']
     invAlpha.subexpressions.append(alpha)
+    modelFromAddKnowCopy = dict(modelFromAddKnow)
 
-    KBentailsStatement = TT_Entails(KB,alpha)
-    KBentailsNegStatement = TT_Entails(KB,invAlpha)
+    KBentailsStatement = TT_Entails(KB,alpha,modelFromAddKnow)
+    KBentailsNegStatement = TT_Entails(KB,invAlpha,modelFromAddKnowCopy)
 
     print KBentailsStatement #TODO: Testing
     print KBentailsNegStatement #TODO: testing
