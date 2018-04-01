@@ -37,10 +37,11 @@ def TT_Entails(KB, alpha):
 #model will be a dictionary
 def TT_Check_All(KB, alpha, symbols, model):
 
-    if Empty?(symbols):
-        if PL-True?(KB,model):
-            return PL-True?(alpha,model)
-        else return true
+    if len(symbols) == 0:
+        if PL_True(KB,model):
+            return PL_True(alpha,model)
+        else:
+            return True
     else:
         P = symbols[0]
         rest = symbols[1:] #everything except the first index one
@@ -52,10 +53,53 @@ def TT_Check_All(KB, alpha, symbols, model):
         falseModel[P] = False
 
         return TT_Check_All(KB,alpha,rest, trueModel) and TT_Check_All(KB,alpha,rest,falseModel)
-    return
+def PL_True(expression, model):
+    if expression.symbol[0] is not '':
+        return model[expression.symbol[0]]
+    elif expression.connective[0].lower() is "and":
+        for elem in expression.subexpressions:
+            if PL_True(elem,model) is False:
+                return False
+        return True
+    elif expression.connective[0].lower() is "or":
+        for elem in expression.subexpressions:
+            if PL_True(elem,model) is True:
+                return True
+        return False
+    elif expression.connective[0].lower() is "xor":
+        true_trigger = False
+        false_trigger = False
+        for elem in expression.subexpressions:
+            if PL_True(elem,model) is True:
+                true_trigger = True
+            else:
+                false_trigger = True
+        if true_trigger is True and false_trigger is True:
+            return True
+        else:
+            return False
+    elif expression.connective[0].lower() is "if":
+        one = expression.subexpressions[0]
+        two = expression.subexpressions[1]
+        if PL_True(one,model) is True and PL_True(two,model) is False:
+            return False
+        else:
+            return True
+    elif expression.connective[0].lower() is "iff":
+        one = expression.subexpressions[0]
+        two = expression.subexpressions[1]
+        if PL_True(one,model) == PL_True(two,model):
+            return True
+        else:
+            return False
+    elif expression.connective[0].lower() is "not":
+        one = expression.subexpressions[0]
+        if PL_True(one, model) is True:
+            return False
+        else:
+            return True
 
-def PL-True:
-    
+
 
 def main(argv):
     if len(argv) != 4:
@@ -137,7 +181,7 @@ def main(argv):
     print
 
     # Run the statement through the inference engine
-    TT_Entails(knowledge_base, statement)
+    print TT_Entails(knowledge_base, statement)
 
     sys.exit(1)
     
