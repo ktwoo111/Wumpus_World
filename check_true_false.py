@@ -52,6 +52,9 @@ def main(argv):
         print('failed to open file %s' % argv[2])
         sys.exit(0)
 
+    # I had left this line out of the original code. If things break, comment out.
+    print_expression(knowledge_base, '\n')
+
     # Add expressions to knowledge base
     print 'Loading additional knowledge...'
     for line in input_file:
