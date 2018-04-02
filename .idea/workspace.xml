@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d78cc524-9f3a-4269-a3ea-418171dceb75" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/b.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/c.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/check_true_false.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_true_false.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defFalse.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logical_expression.py" beforeDir="false" afterPath="$PROJECT_DIR$/logical_expression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/bothTrueFalse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/bothTrueFalse.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
