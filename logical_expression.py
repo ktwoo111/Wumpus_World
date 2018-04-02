@@ -168,7 +168,7 @@ def valid_symbol(symbol):
 
 def ExtractSymbol(expression):
     extractedSymbols = []
-    if expression.symbol[0] is not '':
+    if expression.symbol[0] != '':
         extractedSymbols.append(expression.symbol[0])
     else:
         for elem in expression.subexpressions:
@@ -192,9 +192,11 @@ def TT_Entails(KB, alpha,modelFromAddKnow):
     Alphasymbols = ExtractSymbol(alpha)
     symbols = KBsymbols + Alphasymbols
     symbols = sorted(set(symbols), key=symbols.index)
-    #print symbols #TODO: testing
+    print symbols #TODO: testing
+    print 'size: ', len(symbols) #TODO: testing
     symbols = RemoveSymbol(symbols,modelFromAddKnow)
-    #print symbols #TODO: testing
+    print symbols #TODO: testing
+    print 'size: ', len(symbols) #TODO: testing
     return TT_Check_All(KB,alpha,symbols,modelFromAddKnow)
 
 
@@ -220,56 +222,60 @@ def TT_Check_All(KB, alpha, symbols, model):
 
 
 def PL_True(expression, model):
-    if expression.symbol[0] is not '':
+    if expression.symbol[0] !=  '':
         return model[expression.symbol[0]]
-    elif expression.connective[0].lower() is "and":
+    elif expression.connective[0].lower() == 'and':
         for elem in expression.subexpressions:
-            if PL_True(elem,model) is False:
+            if PL_True(elem,model) == False:
                 return False
         return True
-    elif expression.connective[0].lower() is "or":
+    elif expression.connective[0].lower() == 'or':
         for elem in expression.subexpressions:
-            if PL_True(elem,model) is True:
+            if PL_True(elem,model) == True:
                 return True
         return False
-    elif expression.connective[0].lower() is "xor":
-        true_trigger = False
-        false_trigger = False
+    elif expression.connective[0].lower() == 'xor':
+        #An "xor" statement is true if exactly 1 substatement is true (no more, no fewer).
+        true_trigger = 0
+        false_trigger = 0
         for elem in expression.subexpressions:
             if PL_True(elem,model) is True:
-                true_trigger = True
+                true_trigger = true_trigger + 1
             else:
-                false_trigger = True
-        if true_trigger is True and false_trigger is True:
+                false_trigger = false_trigger + 1
+        if true_trigger == 1 and false_trigger > 0:
             return True
         else:
             return False
-    elif expression.connective[0].lower() is "if":
+    elif expression.connective[0].lower() == 'if':
         one = expression.subexpressions[0]
         two = expression.subexpressions[1]
-        if PL_True(one,model) is True and PL_True(two,model) is False:
+        if PL_True(one,model) == True and PL_True(two,model) == False:
             return False
         else:
             return True
-    elif expression.connective[0].lower() is "iff":
+    elif expression.connective[0].lower() == 'iff':
         one = expression.subexpressions[0]
         two = expression.subexpressions[1]
         if PL_True(one,model) == PL_True(two,model):
             return True
         else:
             return False
-    elif expression.connective[0].lower() is "not":
+    elif expression.connective[0].lower() == 'not':
         one = expression.subexpressions[0]
-        if PL_True(one, model) is True:
+        if PL_True(one, model) == True:
             return False
         else:
             return True
-
 def check_true_false(KB, alpha,modelFromAddKnow):
     f = open('result.txt','w')
     invAlpha = logical_expression()
-    invAlpha.connective = ['not']
+    invAlpha.connective = ['NOT']
     invAlpha.subexpressions.append(alpha)
+    #print_expression(alpha, '\n') #TODO: testing
+    #print
+    #print_expression(invAlpha,'\n') #TODO: testing
+    #print #TODO: testing
     modelFromAddKnowCopy = dict(modelFromAddKnow)
 
     KBentailsStatement = TT_Entails(KB,alpha,modelFromAddKnow)
@@ -278,13 +284,13 @@ def check_true_false(KB, alpha,modelFromAddKnow):
     print KBentailsStatement #TODO: Testing
     print KBentailsNegStatement #TODO: testing
     result = ''
-    if KBentailsStatement is True and KBentailsNegStatement is False:
+    if KBentailsStatement == True and KBentailsNegStatement == False:
         result = "definitely true"
-    elif KBentailsStatement is False and KBentailsNegStatement is True:
+    elif KBentailsStatement == False and KBentailsNegStatement == True:
         result = "definitely false"
-    elif KBentailsStatement is False and KBentailsNegStatement is False:
+    elif KBentailsStatement == False and KBentailsNegStatement == False:
         result = "possibly true, possibly false"
-    elif KBentailsStatement is True and KBentailsNegStatement is True:
+    elif KBentailsStatement == True and KBentailsNegStatement == True:
         result = "both true and false"
 
     print result #TODO: testing

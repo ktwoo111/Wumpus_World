@@ -1,2 +1,2 @@
-(and a (not b))
+f
 

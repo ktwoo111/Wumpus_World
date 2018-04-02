@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d78cc524-9f3a-4269-a3ea-418171dceb75" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/a.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/b.txt" beforeDir="false" afterPath="$PROJECT_DIR$/b.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c.txt" beforeDir="false" afterPath="$PROJECT_DIR$/c.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/check_true_false.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_true_false.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logical_expression.py" beforeDir="false" afterPath="$PROJECT_DIR$/logical_expression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_kb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_statement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_wampus_rules.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_true_false.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check_true_false.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_true_false.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="257">
+              <caret line="94" column="69" lean-forward="true" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logical_expression.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logical_expression.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logical_expression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
+            <state relative-caret-position="53">
+              <caret line="185" column="18" lean-forward="true" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -45,14 +51,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/check_true_false.py" />
         <option value="$PROJECT_DIR$/logical_expression.py" />
+        <option value="$PROJECT_DIR$/check_true_false.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="178" />
-    <option name="y" value="163" />
+    <option name="x" value="267" />
+    <option name="y" value="260" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -122,7 +128,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/check_true_false.py" />
-      <option name="PARAMETERS" value="&quot;my_wampus_rules.txt&quot; &quot;my_kb.txt&quot; &quot;my_statement.txt&quot;" />
+      <option name="PARAMETERS" value="&quot;wumpus_rule.txt&quot; &quot;AddKB.txt&quot; &quot;alpha.txt&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -147,18 +153,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="178" y="163" width="1400" height="1000" extended-state="0" />
+    <frame x="267" y="260" width="1400" height="1000" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.36012527" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40179574" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25925925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978677" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955106" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -173,10 +179,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/check_true_false.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logical_expression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3077">
+          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/check_true_false.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
@@ -247,17 +267,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check_true_false.py">
+    <entry file="file://$PROJECT_DIR$/logical_expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="53">
+          <caret line="185" column="18" lean-forward="true" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logical_expression.py">
+    <entry file="file://$PROJECT_DIR$/check_true_false.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
+        <state relative-caret-position="257">
+          <caret line="94" column="69" lean-forward="true" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
         </state>
       </provider>
     </entry>
