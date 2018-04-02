@@ -192,11 +192,11 @@ def TT_Entails(KB, alpha,modelFromAddKnow):
     Alphasymbols = ExtractSymbol(alpha)
     symbols = KBsymbols + Alphasymbols
     symbols = sorted(set(symbols), key=symbols.index)
-    print symbols #TODO: testing
-    print 'size: ', len(symbols) #TODO: testing
+    #print symbols #TODO: testing
+    #print 'size: ', len(symbols) #TODO: testing
     symbols = RemoveSymbol(symbols,modelFromAddKnow)
-    print symbols #TODO: testing
-    print 'size: ', len(symbols) #TODO: testing
+    #print symbols #TODO: testing
+    #print 'size: ', len(symbols) #TODO: testing
     return TT_Check_All(KB,alpha,symbols,modelFromAddKnow)
 
 
@@ -296,7 +296,7 @@ def check_true_false(KB, alpha,modelFromAddKnow):
     print result #TODO: testing
     f.write(result)
     f.close()
-    return
+    return result
 
 
 

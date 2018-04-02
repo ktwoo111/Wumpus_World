@@ -71,7 +71,7 @@ def main(argv):
         knowledge_base.subexpressions.append(subexpression)
     input_file.close()
 
-    print 'from rules ', modelFromAddKnow #TODO: testing
+    #print 'from rules ', modelFromAddKnow #TODO: testing
     # Read additional knowledge base information file
     try:
         input_file = open(argv[2], 'rb')
@@ -85,8 +85,8 @@ def main(argv):
     #print_expression(knowledge_base, '\n') #TODO: testing
     #print
 
-    print 'from additional and rule ', modelFromAddKnow  # TODO: testing
-    print 'size of dictionary ', len(modelFromAddKnow) # TODO:testing
+    #print 'from rule ', modelFromAddKnow  # TODO: testing
+    #print 'size of dictionary ', len(modelFromAddKnow) # TODO:testing
 
 
     # Add expressions to knowledge base
@@ -126,8 +126,8 @@ def main(argv):
 
     # I had left this line out of the original code. If things break, comment out.
     #print_expression(knowledge_base, '\n') #TODO: testing
-    print 'from additional and rule ', modelFromAddKnow #TODO: testing
-    print 'size of dictionary ', len(modelFromAddKnow) #TODO:testing
+    #print 'from additional and rule ', modelFromAddKnow #TODO: testing
+    #print 'size of dictionary ', len(modelFromAddKnow) #TODO:testing
     # Read statement whose entailment we want to determine
     try:
         input_file = open(argv[3], 'rb')
@@ -152,7 +152,6 @@ def main(argv):
 
     # Run the statement through the inference engine
     check_true_false(knowledge_base, statement, modelFromAddKnow)
-
     sys.exit(1)
     
 
