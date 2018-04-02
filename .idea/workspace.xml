@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/check_true_false.py" line="84" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d78cc524-9f3a-4269-a3ea-418171dceb75" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Tests/bothTrueFalse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/bothTrueFalse.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
-    </list>
+    <list default="true" id="d78cc524-9f3a-4269-a3ea-418171dceb75" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +26,7 @@
       <file leaf-file-name="logical_expression.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logical_expression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="700">
               <caret line="297" column="13" lean-forward="true" selection-start-line="297" selection-start-column="13" selection-end-line="297" selection-end-column="13" />
             </state>
           </provider>
@@ -169,7 +166,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45095947" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45095947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -337,7 +334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logical_expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="700">
           <caret line="297" column="13" lean-forward="true" selection-start-line="297" selection-start-column="13" selection-end-line="297" selection-end-column="13" />
         </state>
       </provider>
