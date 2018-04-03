@@ -8,6 +8,10 @@ python check_true_false.py Tests/wrongTestKB.txt Tests/TestAddKnow.txt Tests/bot
 
 python check_true_false.py Tests/testKB.txt Tests/TestAddKnow.txt Tests/possibleTrueFalse.txt
 
-python check_true_false.py wumpus_rules.txt AddKB.txt statement.txt
+python check_true_false.py wumpus_rules.txt Tests/AddKBWumpus.txt Tests/defFalseWumpus.txt
+
+python check_true_false.py wumpus_rules.txt Tests/AddKBWumpus.txt Tests/defTrueWumpus.txt
+
+python check_true_false.py wumpus_rules.txt Tests/AddKBWumpus.txt Tests/possibleTrueFalseWumpus.txt
 
 PAUSE

@@ -1,3 +1,8 @@
+(NOT P_2_1)
+(NOT M_2_1)
+(NOT S_2_1)
+B_2_1
+
 P_3_1
 (NOT M_3_1)
 (NOT S_3_1)
@@ -7,6 +12,16 @@ P_3_1
 (NOT M_4_1)
 (NOT S_4_1)
 B_4_1
+
+(NOT P_1_2)
+(NOT M_1_2)
+S_1_2
+(NOT B_1_2)
+
+(NOT P_2_2)
+(NOT M_2_2)
+(NOT S_2_2)
+(NOT B_2_2)
 
 (NOT P_3_2)
 (NOT M_3_2)
@@ -25,26 +40,11 @@ M_1_3
 
 (NOT P_2_3)
 (NOT M_2_3)
-S_2_3)
-B_2_3)
+S_2_3
+B_2_3
 
 P_3_3
 (NOT M_3_3)
 (NOT S_3_3)
 (NOT B_3_3)
-
-(NOT P_4_3)
-(NOT M_4_3)
-(NOT S_4_3)
-B_4_3
-
-(NOT P_1_4)
-(NOT M_1_4)
-S_1_4
-(NOT B_1_4)
-
-(NOT P_2_4)
-(NOT M_2_4)
-(NOT S_2_4)
-(NOT B_2_4)
 
