@@ -1,5 +1,5 @@
 1. Taewoo Kim, CWID: 10696249
-2. Python 2.7.14
+2. Python 2.7.14 and Windows 10
 3. 
 check_true_false.py reads  in the text files from the three arguments.
 logical_expression.py has all the functions and algorithm to state statement's truth value depending
