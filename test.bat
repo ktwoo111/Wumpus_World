@@ -1,4 +1,4 @@
-python check_true_false.py a.txt b.txt c.txt
+python check_true_false.py Tests/a.txt Tests/b.txt Tests/c.txt
 
 python check_true_false.py Tests/testKB.txt Tests/TestAddKnow.txt Tests/defTrue.txt
 
