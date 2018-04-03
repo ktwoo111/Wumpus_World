@@ -168,7 +168,7 @@ def valid_symbol(symbol):
 
 def ExtractSymbol(expression):
     extractedSymbols = []
-    if expression.symbol[0] != '':
+    if expression.symbol[0] != '' and expression.symbol[0] not in extractedSymbols:
         extractedSymbols.append(expression.symbol[0])
     else:
         for elem in expression.subexpressions:
