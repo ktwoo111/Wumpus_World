@@ -189,7 +189,9 @@ def RemoveSymbol(symbols,modelFromAddKnow):
 
 def TT_Entails(KB, alpha,modelFromAddKnow):
     KBsymbols = ExtractSymbol(KB)
+    #print KBsymbols #TODO: testing
     Alphasymbols = ExtractSymbol(alpha)
+    #print Alphasymbols #TODO: testing
     symbols = KBsymbols + Alphasymbols
     symbols = sorted(set(symbols), key=symbols.index)
     #print symbols #TODO: testing
