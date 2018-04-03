@@ -168,12 +168,12 @@ def valid_symbol(symbol):
 
 def ExtractSymbol(expression):
     extractedSymbols = []
-    if expression.symbol[0] != '' and expression.symbol[0] not in extractedSymbols:
+    if expression.symbol[0] != '':
         extractedSymbols.append(expression.symbol[0])
     else:
         for elem in expression.subexpressions:
             extractedSymbols = extractedSymbols + (ExtractSymbol(elem))
-    return extractedSymbols
+    return sorted(set(extractedSymbols), key=extractedSymbols.index)
 
 def RemoveSymbol(symbols,modelFromAddKnow):
     key = modelFromAddKnow.keys()
