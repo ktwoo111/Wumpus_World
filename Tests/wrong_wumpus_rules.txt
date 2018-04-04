@@ -1,3 +1,4 @@
+M_3_4
 #If there is a monster at square (i,j), there is stench at all adjacent squares.
 (if M_1_3 (and S_1_4 S_2_3 S_1_2))
 (if M_1_4 (and S_1_3 S_2_4))
